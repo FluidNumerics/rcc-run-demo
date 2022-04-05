@@ -37,7 +37,7 @@ resource "google_cloudbuild_trigger" "builds" {
   }
   substitutions = {
   _ZONE = local.bld_zone[each.key]
-  _IMAGE = local.bld_gce_image[each.key]
+  _IMAGE = local.bld_image[each.key]
   }
   filename = var.cloudbuild_path
 }
