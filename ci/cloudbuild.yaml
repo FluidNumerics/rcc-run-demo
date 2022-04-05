@@ -16,3 +16,6 @@ steps:
          'gcr.io/${PROJECT_ID}/smoother:latest',
          'smoother','1000','1000','100'
   ]
+
+
+images: ['gcr.io/${PROJECT_ID}/smoother:latest']
