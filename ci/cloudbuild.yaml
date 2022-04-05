@@ -1,0 +1,18 @@
+
+steps:
+
+- id: Build Docker Image
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['build',
+         '.',
+         '-f','docker/Dockerfile',
+         '-t',
+         'gcr.io/${PROJECT_ID}/smoother:latest'
+  ]
+
+- id: Test
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['run',
+         'gcr.io/${PROJECT_ID}/smoother:latest',
+         'smoother','1000','1000','100'
+  ]
